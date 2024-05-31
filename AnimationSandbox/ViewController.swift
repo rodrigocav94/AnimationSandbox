@@ -14,10 +14,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView = UIImageView(image: UIImage(named: "fly"))
+        imageView = UIImageView(image: UIImage(named: "mosquito"))
         imageView.center = view.center
         imageView.layer.zPosition = 0
         view.addSubview(imageView)
+        
+        let title = UILabel()
+        title.text = "Tap the button to play an animation."
+        title.font = UIFont(name: "Chalkduster", size: 30)
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.numberOfLines = 0
+        title.textAlignment = .center
+        view.addSubview(title)
+        
+        NSLayoutConstraint.activate([
+            title.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            title.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 25),
+            title.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -25)
+        ])
     }
     
     @IBAction func tapped(_ sender: UIButton) {
@@ -68,7 +82,7 @@ class ViewController: UIViewController {
             duration: 0.1,
             options: .curveEaseInOut,
             animations: {
-                self.imageView.image = UIImage(named: alive ? "fly": "flyDead")
+                self.imageView.image = UIImage(named: alive ? "mosquito": "mosquitoDead")
             },
             completion: nil
         )
