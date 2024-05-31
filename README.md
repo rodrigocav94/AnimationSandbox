@@ -1,5 +1,6 @@
 # AnimationSandbox
 
+A simple app designed for testing and running animations and transitions.<br><br>
+Technologies: UIView.animate(withDuration:), CGAffineTransform, UIView.transition.
 
-https://github.com/rodrigocav94/AnimationSandbox/assets/58222390/df01c0ab-94b1-46ad-af7b-048fe1847851
-
+https://github.com/rodrigocav94/AnimationSandbox/assets/58222390/0200e40c-e903-4c9f-841d-a3b905fe311d
