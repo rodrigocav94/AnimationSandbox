@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         
         imageView = UIImageView(image: UIImage(named: "fly"))
         imageView.center = view.center
+        imageView.layer.zPosition = 0
         view.addSubview(imageView)
     }
     
@@ -30,7 +31,9 @@ class ViewController: UIViewController {
             case 1:
                 self.imageView.transform = .identity // Clears our view of any pre-defined transform, resetting any changes that have been applied by modifying its transform property.
             case 2:
-                self.imageView.transform = CGAffineTransform(translationX: -256, y: -256) // These values are deltas, or differences from the current value, meaning that it subtracts 256 from both the current X and Y position.
+                let translationX = CGFloat.random(in: (-self.view.center.x + 20)...(self.view.center.x - 20))
+                let translationY = CGFloat.random(in: (-self.view.center.y + 20)...(self.view.center.y - 20))
+                self.imageView.transform = CGAffineTransform(translationX: translationX, y: translationY) // These values are deltas, or differences from the current value, meaning that it subtracts or adds from both the current X and Y position.
             case 3:
                 self.imageView.transform = .identity
             case 4:
